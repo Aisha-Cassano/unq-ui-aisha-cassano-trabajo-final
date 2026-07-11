@@ -5,6 +5,7 @@ function Game() {
     const [word, setWord] = useState("");
     const [wordChain, setWordChain] = useState([]);
     const [msg, setMsg] = useState(null);
+    const [score, setScore] = useState(0);
 
     const handleSubmit = async () => {
         const trimmedWord = word.trim().toLocaleUpperCase();
@@ -19,23 +20,29 @@ function Game() {
                 return;
             }
 
+            if (wordChain.includes(trimmedWord)){
+                setMsg("La palabra ya fue utilizada ");
+                return;
+            }
+
             if (wordChain.length > 0) {     // 0 = []
                 const lastWord = wordChain[wordChain.length - 1];    //ultima palabra de la cadena
                 const lastLetter = lastWord[lastWord.length - 1];    //ultima letra de la ultima palabra
                 const firstLetter = trimmedWord[0];           //primera letra de la nueva palabra
 
                 if (firstLetter !== lastLetter) {
-                    setMsg(`Debe empezar con "${lastLetter}` );
+                    setMsg(`Debe empezar con ${lastLetter}` );
                     return
                 }
             }
 
-            setWordChain([...wordChain, trimmedWord])       //agrego a la cadena la nueva palabra
+            setWordChain([...wordChain, trimmedWord])     //agrego a la cadena la nueva palabra
+            setScore(score + trimmedWord.length)          //sumo los puntos de la nueva palabra
             setMsg(null);       //restablezco estado
             setWord("");        //restablezco estado
 
         } catch (error) {
-            setResult( "Error: " + error.message);
+            setMsg( "Error: " + error.message);
             console.error(error);
         }
     };
@@ -50,6 +57,7 @@ function Game() {
             />
             <button onClick={handleSubmit}> Enviar </button>
             {msg && <p>{msg}</p>}
+            <p> Puntaje: {score} </p>
             <p> Cadena: {wordChain.join(" -> ")} </p>
         </div>
     );
