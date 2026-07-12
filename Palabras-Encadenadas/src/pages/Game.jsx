@@ -1,18 +1,27 @@
 import { useState } from "react";
-import { useWordChain } from "../hooks/useWordChain.jsx";
+import { useWordChain } from "../hooks/useWordChain.js";
+import {useGame} from "../hooks/useGame.js";
 
 function Game() {
     const [word, setWord] = useState("");
-    const { wordChain,
-            msg,
-            score,
-            submitWord,
-            lastWord,
-            lastLetter } = useWordChain();
+    const {
+        wordChain,
+        msg,
+        score,
+        lastWord,
+        timeLeft,
+        gameOver,
+        submitWord,
+        resetGame } = useGame();
 
 
-    const handleSubmit = async () => {
+    const handleSubmitWord = async () => {
         await submitWord(word);
+        setWord("");
+    };
+
+    const handleResetGame = () => {
+        resetGame();
         setWord("");
     };
 
@@ -22,14 +31,25 @@ function Game() {
 
             <p> Palabra anterior: {lastWord || "-" } </p>
             <p> Puntaje: {score} </p>
+            <p> Tiempo: {timeLeft || "-"} </p>
 
-            <input
-                value={word}
-                onChange={(e) => setWord(e.target.value)}
-                placeholder="escribí una palabra"
-            />
-            <button onClick={handleSubmit}> Enviar </button>
-            {msg && <p>{msg}</p>}
+            {gameOver ? (
+                <div>
+                    <p> PARTIDA TERMINADA </p>
+                    <button onClick={handleResetGame}> Nuevo intento </button>
+                </div>
+            ) : (
+                <>
+                    <input
+                        value={word}
+                        onChange={(e) => setWord(e.target.value)}
+                        placeholder="escribí una palabra"
+                    />
+                    <button onClick={handleSubmitWord}> Enviar </button>
+                    {msg && <p>{msg}</p>}
+                </>
+                )}
+
             <p> Cadena: {wordChain.join(" -> ")} </p>
 
         </div>
