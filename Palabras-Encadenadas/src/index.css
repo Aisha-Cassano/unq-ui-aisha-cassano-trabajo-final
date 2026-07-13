@@ -1,0 +1,27 @@
+:root {
+    /* variables */
+    --color-bg: #0f0f0f;
+    --color-text: #dfdcec;
+    --color-text-snd: aquamarine;
+
+    --color-primary: #2f4c43;
+    --color-primary-snd: #0a2b22;
+    --color-surface: #474554;
+    --color-surface-snd: #aca9bb;
+
+
+    --font-display: Georgia, "Times New Roman", serif;
+    --font-mono: "Courier New", Courier, monospace;
+    --font-body: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+}

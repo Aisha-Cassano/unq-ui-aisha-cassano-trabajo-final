@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useWordChain } from "../hooks/useWordChain.js";
-import {useGame} from "../hooks/useGame.js";
+import { useWordChain } from "../components/useWordChain.js";
+import {useGame} from "../components/useGame.js";
 
 function Game() {
     const [word, setWord] = useState("");
@@ -26,7 +26,7 @@ function Game() {
     };
 
     return (
-        <div style={{ backgroundColor: "lightgreen", minHeight: "100vh" }}>
+        <div>
             <h1>Game</h1>
 
             <p> Palabra anterior: {lastWord || "-" } </p>

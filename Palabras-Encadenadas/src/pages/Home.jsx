@@ -1,12 +1,22 @@
-import { Link } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
+import "../styles/pages/Home.css"
 
 function Home() {
+
+    const navigate = useNavigate();
+
     return (
-        <div style={{ backgroundColor: "#35374B"}}>
-            <h1> PALABRAS ENCADENADAS </h1>
-            <Link to="/game"> jugar </Link>
-            <br />
-            <Link to="/leaderboard"> leaderboard </Link>
+        <div className= "home-view">
+            <div className="home-card">
+                <h1> PALABRAS ENCADENADAS </h1>
+                <p> Formá la cadena más larga de palabras posibles antes de que se te acabe el tiempo. </p>
+
+                <div>
+                    <button className="btn-secondary" onClick={ () => navigate("/game")}> JUGAR </button>
+                    <button className="btn-secondary" onClick={ () => navigate("/game")}> LEADERBOARD </button>
+                </div>
+
+            </div>
         </div>
     );
 }
