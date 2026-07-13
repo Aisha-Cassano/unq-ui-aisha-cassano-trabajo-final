@@ -36,6 +36,7 @@ function Game() {
             {gameOver ? (
                 <div>
                     <p> PARTIDA TERMINADA </p>
+                    <p> Cantidad de palabras: {wordChain.length} </p>
                     <button onClick={handleResetGame}> Nuevo intento </button>
                 </div>
             ) : (

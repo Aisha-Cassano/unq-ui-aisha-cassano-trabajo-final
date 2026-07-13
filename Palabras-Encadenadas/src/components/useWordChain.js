@@ -10,14 +10,6 @@ export function useWordChain() {
     const lastLetter = lastWord ? lastWord[lastWord.length - 1] : null;              //ultima letra o null
 
 
-    const isReapeted = (word) => wordChain.includes(word);
-
-    const isChainedCorrectly = (word) => {
-        if (!lastWord) return true;         //caso base: truthy(!null) => true
-
-        return word[0] === lastLetter;      //es la primer letra de la nueva, igual a la ultima letra de la anterior?
-    };
-
     const addWord = async (word) => {
         const trimmedWord = word.trim().toLocaleUpperCase();
 
@@ -25,20 +17,22 @@ export function useWordChain() {
 
         try {
             const exist = await validateWord(trimmedWord);
+            const isReapeted= wordChain.includes(trimmedWord);
+            const isChainedCorrectly = word[0] === lastLetter;  //primer letra de la nueva === ultima letra de la anterior?
 
-            if (!exist) {
+            if (!exist) {       //switch
                 setMsg("Palabra inexistente");
-                return { added: false };
+                return { added: exist };
             }
 
-            if (isReapeted(trimmedWord)) {
+            if (isReapeted) {
                 setMsg("La palabra ya fue utilizada");
-                return { added: false };
+                return { added: !isReapeted };
             }
 
-            if (!isChainedCorrectly(trimmedWord)) {
+            if (!isChainedCorrectly) {
                 setMsg(`Debe empezar con ${lastLetter}`);
-                return { added: false };
+                return { added: isChainedCorrectly };
             }
 
             setWordChain([...wordChain, trimmedWord])     //agrego a la cadena la nueva palabra
