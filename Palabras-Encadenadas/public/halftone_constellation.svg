@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none"><defs><filter id="tint" color-interpolation-filters="sRGB"><feFlood flood-color="#161717" result="flood"/><feBlend mode="multiply" in="SourceGraphic" in2="flood" result="blend"/><feComposite in="blend" in2="SourceGraphic" operator="in"/></filter></defs><g filter="url(#tint)">
+  <!-- Constellation Group A: upper-left (dipper shape) -->
+  <circle cx="42" cy="32" r="3.5" fill="white"/>
+  <circle cx="72" cy="25" r="2.5" fill="white"/>
+  <circle cx="98" cy="38" r="3" fill="white"/>
+  <circle cx="90" cy="68" r="2.5" fill="white"/>
+  <circle cx="58" cy="62" r="3" fill="white"/>
+  <rect x="42" y="31.4" width="31.8" height="1.2" transform="rotate(-13.1,42,32)" fill="white"/>
+  <rect x="72" y="24.4" width="29.1" height="1.2" transform="rotate(26.6,72,25)" fill="white"/>
+  <rect x="98" y="37.4" width="31.1" height="1.2" transform="rotate(104.9,98,38)" fill="white"/>
+  <rect x="90" y="67.4" width="32.6" height="1.2" transform="rotate(-169.4,90,68)" fill="white"/>
+
+  <!-- Constellation Group B: center-right (triangle) -->
+  <circle cx="178" cy="75" r="4" fill="white"/>
+  <circle cx="215" cy="52" r="2.5" fill="white"/>
+  <circle cx="228" cy="92" r="3.5" fill="white"/>
+  <rect x="178" y="74.4" width="43.6" height="1.2" transform="rotate(-31.9,178,75)" fill="white"/>
+  <rect x="215" y="51.4" width="42.1" height="1.2" transform="rotate(72,215,52)" fill="white"/>
+  <rect x="228" y="91.4" width="52.8" height="1.2" transform="rotate(-161.2,228,92)" fill="white"/>
+
+  <!-- Constellation Group C: lower-left (zigzag chain) -->
+  <circle cx="28" cy="158" r="2.5" fill="white"/>
+  <circle cx="62" cy="142" r="3" fill="white"/>
+  <circle cx="98" cy="168" r="2.5" fill="white"/>
+  <circle cx="132" cy="148" r="3.5" fill="white"/>
+  <circle cx="162" cy="172" r="2.5" fill="white"/>
+  <rect x="28" y="157.4" width="37.6" height="1.2" transform="rotate(-25.2,28,158)" fill="white"/>
+  <rect x="62" y="141.4" width="44.4" height="1.2" transform="rotate(35.8,62,142)" fill="white"/>
+  <rect x="98" y="167.4" width="39.5" height="1.2" transform="rotate(-30.5,98,168)" fill="white"/>
+  <rect x="132" y="147.4" width="38.4" height="1.2" transform="rotate(38.7,132,148)" fill="white"/>
+
+  <!-- Constellation Group D: lower-right (diamond) -->
+  <circle cx="198" cy="152" r="3" fill="white"/>
+  <circle cx="222" cy="132" r="2.5" fill="white"/>
+  <circle cx="245" cy="158" r="2.5" fill="white"/>
+  <circle cx="222" cy="182" r="2.5" fill="white"/>
+  <rect x="198" y="151.4" width="31.2" height="1.2" transform="rotate(-39.8,198,152)" fill="white"/>
+  <rect x="222" y="131.4" width="34.7" height="1.2" transform="rotate(48.5,222,132)" fill="white"/>
+  <rect x="245" y="157.4" width="33.2" height="1.2" transform="rotate(133.8,245,158)" fill="white"/>
+  <rect x="222" y="181.4" width="38.4" height="1.2" transform="rotate(-128.7,222,182)" fill="white"/>
+
+  <!-- Constellation Group E: bottom-center (small triangle) -->
+  <circle cx="78" cy="218" r="3" fill="white"/>
+  <circle cx="118" cy="208" r="2.5" fill="white"/>
+  <circle cx="108" cy="238" r="2" fill="white"/>
+  <rect x="78" y="217.4" width="41.2" height="1.2" transform="rotate(-14,78,218)" fill="white"/>
+  <rect x="118" y="207.4" width="31.6" height="1.2" transform="rotate(108.4,118,208)" fill="white"/>
+  <rect x="108" y="237.4" width="36.1" height="1.2" transform="rotate(-146.3,108,238)" fill="white"/>
+
+  <!-- Background stars (medium, no connections) -->
+  <circle cx="12" cy="12" r="1.5" fill="white"/>
+  <circle cx="138" cy="18" r="1.5" fill="white"/>
+  <circle cx="232" cy="22" r="2" fill="white"/>
+  <circle cx="152" cy="108" r="1.5" fill="white"/>
+  <circle cx="22" cy="112" r="1.5" fill="white"/>
+  <circle cx="248" cy="118" r="1.5" fill="white"/>
+  <circle cx="48" cy="198" r="1.5" fill="white"/>
+  <circle cx="172" cy="228" r="1.5" fill="white"/>
+  <circle cx="238" cy="218" r="2" fill="white"/>
+  <circle cx="128" cy="92" r="1.5" fill="white"/>
+  <circle cx="198" cy="198" r="1.5" fill="white"/>
+  <circle cx="8" cy="238" r="1.5" fill="white"/>
+  <circle cx="248" cy="242" r="1.5" fill="white"/>
+  <circle cx="185" cy="22" r="1.5" fill="white"/>
+  <circle cx="18" cy="78" r="1" fill="white"/>
+  <circle cx="145" cy="188" r="1" fill="white"/>
+  <circle cx="200" cy="108" r="1" fill="white"/>
+  <circle cx="82" cy="128" r="1" fill="white"/>
+  <circle cx="168" cy="138" r="1" fill="white"/>
+  <circle cx="35" cy="248" r="1.5" fill="white"/>
+
+  <!-- Tiny scattered stars (halftone dust) -->
+  <circle cx="55" cy="8" r="0.8" fill="white"/>
+  <circle cx="110" cy="5" r="0.6" fill="white"/>
+  <circle cx="205" cy="12" r="0.7" fill="white"/>
+  <circle cx="8" cy="48" r="0.6" fill="white"/>
+  <circle cx="130" cy="55" r="0.8" fill="white"/>
+  <circle cx="248" cy="65" r="0.7" fill="white"/>
+  <circle cx="35" cy="95" r="0.6" fill="white"/>
+  <circle cx="112" cy="115" r="0.7" fill="white"/>
+  <circle cx="215" cy="110" r="0.6" fill="white"/>
+  <circle cx="52" cy="145" r="0.7" fill="white"/>
+  <circle cx="175" cy="120" r="0.8" fill="white"/>
+  <circle cx="240" cy="145" r="0.6" fill="white"/>
+  <circle cx="10" cy="175" r="0.7" fill="white"/>
+  <circle cx="120" cy="155" r="0.6" fill="white"/>
+  <circle cx="185" cy="165" r="0.7" fill="white"/>
+  <circle cx="65" cy="235" r="0.6" fill="white"/>
+  <circle cx="155" cy="245" r="0.7" fill="white"/>
+  <circle cx="210" cy="240" r="0.8" fill="white"/>
+  <circle cx="250" cy="195" r="0.6" fill="white"/>
+  <circle cx="5" cy="205" r="0.7" fill="white"/>
+  <circle cx="95" cy="85" r="0.6" fill="white"/>
+  <circle cx="148" cy="72" r="0.7" fill="white"/>
+  <circle cx="42" cy="175" r="0.6" fill="white"/>
+  <circle cx="190" cy="245" r="0.7" fill="white"/>
+  <circle cx="228" cy="175" r="0.6" fill="white"/>
+</g></svg>
