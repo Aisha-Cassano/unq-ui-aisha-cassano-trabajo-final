@@ -17,8 +17,15 @@ export function useWordChain() {
 
         try {
             const exist = await validateWord(trimmedWord);
+
             const isReapeted= wordChain.includes(trimmedWord);
-            const isChainedCorrectly = word[0] === lastLetter;  //primer letra de la nueva === ultima letra de la anterior?
+
+            /* TODO: revisar esto, esta raro */
+            const isChainedCorrectly = () => {
+                if (trimmedWord === "") return { added: false }
+
+                return word[0] === lastLetter; //primer letra de la nueva === ultima letra de la anterior?
+            }
 
             if (!exist) {       //switch
                 setMsg("Palabra inexistente");

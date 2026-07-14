@@ -1,4 +1,4 @@
-.home-view {
+.page-bg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
     background-position: center;
 }
 
-.home-card {
+.page-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@
     border-radius: 16px;
     padding: 3rem 2rem;
     width: 90%;
-    height: 400px;
+    /* height: 400px;       lo saco para estandarizar */
     max-width: 650px;
     text-align: center;
     box-shadow: 0 8px 24px rgba(0.6, 0, 0, 0.6);
