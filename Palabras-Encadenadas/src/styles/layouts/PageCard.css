@@ -21,8 +21,7 @@
     background-color: var(--color-primary);
     border-radius: 16px;
     padding: 3rem 2rem;
-    width: 90%;
-    /* height: 400px;       lo saco para estandarizar */
+    width: 100%;
     max-width: 650px;
     text-align: center;
     box-shadow: 0 8px 24px rgba(0.6, 0, 0, 0.6);

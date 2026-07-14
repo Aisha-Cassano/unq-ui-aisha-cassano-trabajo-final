@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useWordChain } from "../components/useWordChain.js";
 import { useGame } from "../components/useGame.js";
+import { FaCheck } from "react-icons/fa6";
 
 import PageCardLayout from "../layouts/PageCardLayout.jsx";
 import "../styles/pages/Game.css";
@@ -36,33 +37,47 @@ function Game() {
 
     return (
         <PageCardLayout cardClassName="game-card" >
-            <h1>Game</h1>
+            <div className="game-content">
 
-            <p> Palabra anterior: {lastWord || "-"} </p>
-            <p> Puntaje: {score} </p>
-            <p> Tiempo: {timeLeft || "-"} </p>
+                    <div className="stats">
+                        <div className="stats-items"> Puntaje: {score} </div>
+                        <div className="stats-items"> Tiempo: {timeLeft || "-"} </div>
+                    </div>
 
-            {gameOver ? (
-                <div>
-                    <p> PARTIDA TERMINADA </p>
-                    <p> Cantidad de palabras: {wordChain.length} </p>
-                    <button className="btn-primary" onClick={handleResetGame}> Nuevo intento</button>
-                </div>
-            ) : (
-                <>
-                    <input
-                        className="word-input"
-                        value={word}
-                        onChange={(e) => setWord(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder="escribí una palabra"
-                    />
-                    <button className="btn-submit" onClick={handleSubmitWord}> Enviar</button>
-                    {msg && <p>{msg}</p>}
-                </>
-            )}
+                    <div className="last-word-section">
+                        <div className="last-word-label"> Ultima palabra:</div>
+                        <div className="last-word-value"> {lastWord || "-"} </div>
+                    </div>
 
-            <p> Cadena: {wordChain.join(" -> ")} </p>
+
+                {gameOver ? (
+                    <div>
+                        <p> PARTIDA TERMINADA </p>
+                        <p> Cantidad de palabras: {wordChain.length} </p>
+                        <button className="btn-primary" onClick={handleResetGame}> Nuevo intento</button>
+                    </div>
+                ) : (
+                    <div>
+                        <div className="input-row">
+                            <input
+                                className="word-input"
+                                value={word}
+                                onChange={(e) => setWord(e.target.value)}
+                                onKeyDown={handleKeyDown}
+                                placeholder="Escribí una palabra"
+                            />
+                            <button className="btn-submit" onClick={handleSubmitWord}>
+                                <FaCheck/>
+                            </button>
+
+                        </div>
+                        <div className="alert-msg"> {msg} </div>
+                    </div>
+                )}
+
+                <p> Cadena: {wordChain.join(" -> ")} </p>
+
+            </div>
         </PageCardLayout>
     );
 }

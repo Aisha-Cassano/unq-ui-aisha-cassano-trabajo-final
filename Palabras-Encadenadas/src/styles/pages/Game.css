@@ -1,10 +1,21 @@
 .game-card {
-    min-height: 500px;
+    min-height: 65vh;
 }
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
 
 .input-row {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
     width: 100%;
     max-width: 350px;
 }
@@ -17,4 +28,47 @@
     background-color: var(--color-surface-snd);
     color: var(--color-bg);
     font-family: var(--font-mono);
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.stats-items {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    margin: 8px;
+}
+
+.last-word-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 8px;
+}
+
+.last-word-label {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.last-word-value {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.alert-msg {
+    font-family: var(--font-body);
+    min-height: 1.5rem;
+    margin: 0;
+    color: var(--color-text-snd);
 }
