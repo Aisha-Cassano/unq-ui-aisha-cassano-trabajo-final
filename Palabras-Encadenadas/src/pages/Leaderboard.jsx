@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useLeaderboard } from "../components/useLeaderboard.js";
+import { useLeaderboard } from "../hooks/useLeaderboard.js";
 
 import PageCardLayout from "../layouts/PageCardLayout.jsx";
 import "../styles/pages/Leaderboard.css";

@@ -19,14 +19,19 @@ export function useGame() {
     const {
         timeLeft,
         start,
-        reset } = useTimer(SECONDS, () => setGameOver(true))
+        reset,
+        pause,
+        resume } = useTimer(SECONDS, () => setGameOver(true))
 
     const submitWord = async (word) => {
         if (gameOver) return;
 
+        pause();
         const result = await addWord(word);
         if (result.added){
             start();
+        } else {
+            resume();
         }
     }
 

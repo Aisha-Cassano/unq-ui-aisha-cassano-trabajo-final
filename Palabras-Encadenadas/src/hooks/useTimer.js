@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 export function useTimer(seconds, onTimeout) {
     const [timeLeft, setTimeLeft] = useState(null);
+    const [isPaused, setPause] = useState(false);
 
     useEffect( () => {
-        if (timeLeft === null) return;      //Si el timer no empezo => no hago nada
+        if (timeLeft === null || isPaused) return;      //Si el timer no empezo => no hago nada
 
         if (timeLeft === 0) {       //Si el timer llego a 0 => timeout
             onTimeout();
@@ -16,10 +17,21 @@ export function useTimer(seconds, onTimeout) {
         }, 1000);       // 1000 milisegundos = 1 segundo
 
         return () => clearInterval(interval);   //limpieza: cancelo el intervalo
-    }, [timeLeft]);
+    }, [timeLeft, isPaused]);
 
-    const start = () => setTimeLeft(seconds);
-    const reset = () => setTimeLeft(null);
+    const start = () => {
+        setPause(false);
+        setTimeLeft(seconds);
+    };
 
-    return { timeLeft, start, reset }
+    const reset = () => {
+        setTimeLeft(null);
+        setPause(false);
+    };
+
+    const pause = () => setPause(true);
+
+    const resume = () => setPause(false);
+
+    return { timeLeft, start, reset, pause, resume }
 }

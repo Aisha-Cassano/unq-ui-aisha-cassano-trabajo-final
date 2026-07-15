@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import { useWordChain } from "../components/useWordChain.js";
-import { useGame } from "../components/useGame.js";
-import { useLeaderboard } from "../components/useLeaderboard.js";
+import { useWordChain } from "../hooks/useWordChain.js";
+import { useGame } from "../hooks/useGame.js";
+import { useLeaderboard } from "../hooks/useLeaderboard.js";
 import { FaCheck } from "react-icons/fa6";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
