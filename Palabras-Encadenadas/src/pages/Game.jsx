@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useWordChain } from "../components/useWordChain.js";
 import { useGame } from "../components/useGame.js";
+import { useLeaderboard } from "../components/useLeaderboard.js";
 import { FaCheck } from "react-icons/fa6";
 
 import PageCardLayout from "../layouts/PageCardLayout.jsx";
@@ -9,6 +10,7 @@ import "../styles/components/Buttons.css";
 
 function Game() {
     const [word, setWord] = useState("");
+    const [playerName, setPlayerName] = useState("");
     const {
         wordChain,
         msg,
@@ -19,13 +21,10 @@ function Game() {
         submitWord,
         resetGame } = useGame();
 
+    const { addEntry } = useLeaderboard();
+
     const handleSubmitWord = async () => {
         await submitWord(word);
-        setWord("");
-    };
-
-    const handleResetGame = () => {
-        resetGame();
         setWord("");
     };
 
@@ -34,6 +33,17 @@ function Game() {
             handleSubmitWord();
         }
     }
+
+    const handleResetGame = () => {
+        const playerFinalName = playerName.trim() === "" ? "Anónimo" : playerName.trim();
+
+        addEntry(playerFinalName, score);
+
+        resetGame();
+        setWord("");
+        setPlayerName("");
+    };
+
 
     return (
         <PageCardLayout cardClassName="game-card" >
@@ -49,12 +59,19 @@ function Game() {
                         <div className="last-word-value"> {lastWord || "-"} </div>
                     </div>
 
-
                 {gameOver ? (
                     <div>
                         <p> PARTIDA TERMINADA </p>
                         <p> Cantidad de palabras: {wordChain.length} </p>
-                        <button className="btn-primary" onClick={handleResetGame}> Nuevo intento</button>
+                        <p> Puntaje final: {score} </p>
+
+                        <input
+                            value={playerName}
+                            onChange={ (e) => setPlayerName(e.target.value) }
+                            placeholder="Ingresa tu nombre (opcional)"
+                        />
+
+                        <button className="btn-primary" onClick={handleResetGame}> Nuevo intento </button>
                     </div>
                 ) : (
                     <div>
@@ -71,7 +88,9 @@ function Game() {
                             </button>
 
                         </div>
-                        <div className="alert-msg"> {msg} </div>
+                        <div className="alert-msg">
+                            <p> {msg} </p>
+                        </div>
                     </div>
                 )}
 
