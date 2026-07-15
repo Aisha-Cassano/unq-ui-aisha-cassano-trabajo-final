@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { useWordChain } from "../components/useWordChain.js";
 import { useGame } from "../components/useGame.js";
@@ -20,6 +21,8 @@ function Game() {
         gameOver,
         submitWord,
         resetGame } = useGame();
+
+    const navigate = useNavigate();
 
     const { addEntry } = useLeaderboard();
 
@@ -58,17 +61,17 @@ function Game() {
         <PageCardLayout cardClassName="game-card" >
             <div className="game-content">
 
-                    <div className="stats">
-                        <div className="stats-items"> Puntaje {score} </div>
-                        <div className="stats-items"> Tiempo {timeLeft || "-"} </div>
-                    </div>
+                <div className="stats">
+                    <div className="stats-items"> Puntaje {score} </div>
+                    <div className="stats-items"> Tiempo {timeLeft || "-"} </div>
+                </div>
 
-                    <div className="last-word-section">
-                        <div className="big-label"> Ultima palabra:</div>
-                        <div className="last-word-value"> {lastWord || "-"} </div>
-                    </div>
+                <div className="last-word-section">
+                    <div className="big-label"> Ultima palabra:</div>
+                    <div className="last-word-value"> {lastWord || "-"} </div>
+                </div>
 
-                {gameOver ? (
+                { gameOver ? (
                     <div>
                         <div>
                             <p> PARTIDA TERMINADA </p>
@@ -102,12 +105,21 @@ function Game() {
                             </button>
                         </div>
                     </div>
-                )}
+                ) }
                 <div>
                     <div className="big-label"> Cadena Actual </div>
                     <div id="chain-section-scroll" className="chain-section">
                         {wordChain.join("  ->  ")}
                     </div>
+                </div>
+
+                <div className="horizontal-menu">
+                    <button
+                        className="btn-secondary"
+                        onClick={() => navigate("/")}> MENU </button>
+                    <button
+                        className="btn-secondary"
+                        onClick={() => navigate("/leaderboard")}> LEADERBOARD </button>
                 </div>
             </div>
         </PageCardLayout>

@@ -40,3 +40,11 @@
     font-weight: normal;
     margin: 0;
 }
+
+.horizontal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 8px;
+}

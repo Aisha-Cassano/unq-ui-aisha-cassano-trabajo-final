@@ -12,6 +12,8 @@ function Leaderboard() {
         (_, index) => entries[index] || null
     );
 
+    const navigate = useNavigate();
+
     return (
         <PageCardLayout cardClassName="game-card" >
             <div className="big-label"> Leaderboard </div>
@@ -31,6 +33,15 @@ function Leaderboard() {
                     </ol>
                 ))}
             </ul>
+
+            <div className="horizontal-menu">
+                <button
+                    className="btn-secondary"
+                    onClick={() => navigate("/")}> MENU </button>
+                <button
+                    className="btn-secondary"
+                    onClick={() => navigate("/game")}> JUGAR </button>
+            </div>
         </PageCardLayout>
     );
 }

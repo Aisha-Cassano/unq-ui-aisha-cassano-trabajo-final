@@ -1,4 +1,4 @@
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import PageCardLayout from "../layouts/PageCardLayout.jsx";
 import "../styles/components/Buttons.css";
