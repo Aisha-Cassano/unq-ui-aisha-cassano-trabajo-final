@@ -1,11 +1,11 @@
 .game-card {
-    min-height: 65vh;
+    padding: 1rem 2rem;
+    min-height: 70vh;
 }
 
 .game-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -42,22 +42,13 @@
 .stats-items {
     font-family: var(--font-mono);
     font-size: 1.5rem;
-    margin: 8px;
+    padding: 1rem 3rem;
 }
 
 .last-word-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    margin: 8px;
-}
-
-.last-word-label {
-    font-family: var(--font-mono);
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
 }
 
 .last-word-value {
@@ -71,4 +62,24 @@
     min-height: 1.5rem;
     margin: 0;
     color: var(--color-text-snd);
+}
+
+.chain-section {
+    flex: 1;
+    width: 500px;
+    height: 150px;
+    background-color: var(--color-surface-snd);
+    border-radius: 16px;
+    color: var(--color-bg);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 20px;
+    overflow-y: auto;
+
+    /*oculto barra de scroll en chrome, safari y opera*/
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    /* oculto barra de scroll en firefox */
+    scrollbar-width: none;
 }

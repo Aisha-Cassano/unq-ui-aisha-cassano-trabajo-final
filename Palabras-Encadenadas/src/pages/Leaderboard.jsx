@@ -14,7 +14,7 @@ function Leaderboard() {
 
     return (
         <PageCardLayout cardClassName="game-card" >
-            <h1> Leaderboard </h1>
+            <div className="big-label"> Leaderboard </div>
 
             <ul className="lb-list">
                 {rows.map((entry, index) => (
