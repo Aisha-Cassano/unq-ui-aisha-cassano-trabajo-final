@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLeaderboard } from "../components/useLeaderboard.js";
 
 import PageCardLayout from "../layouts/PageCardLayout.jsx";
+import "../styles/pages/Leaderboard.css";
 
 function Leaderboard() {
     const { entries } = useLeaderboard();
@@ -15,15 +16,21 @@ function Leaderboard() {
         <PageCardLayout cardClassName="game-card" >
             <h1> Leaderboard </h1>
 
-            <ol>
+            <ul className="lb-list">
                 {rows.map((entry, index) => (
-                    <li key={index}>
-                        <span>{index + 1}</span>
-                        <span>{entry ? entry.name : ""}</span>
-                        <span>{entry ? entry.score : ""}</span>
-                    </li>
+                    <ol key={index} className="lb-stats-row">
+                        <span className="nameValue">
+                            {index + 1}. { entry? entry.name : "" }
+                        </span>
+
+                        <span className="dotted-row"/>
+
+                        <span className="scoreValue">
+                            { entry ? entry.score : "" }
+                        </span>
+                    </ol>
                 ))}
-            </ol>
+            </ul>
         </PageCardLayout>
     );
 }

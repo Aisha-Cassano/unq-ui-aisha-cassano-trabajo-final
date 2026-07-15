@@ -1,0 +1,31 @@
+.lb-list {
+    padding: 2rem;
+    margin: 0;
+    width: 80%;
+}
+
+.lb-stats-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    font-family: var(--font-mono);
+}
+
+.nameValue {
+    white-space: nowrap;
+}
+
+.scoreValue {
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: var(--font-mono);
+}
+
+.dotted-row {
+    flex: 1;
+    border-bottom: 2px dotted var(--color-primary-snd);
+    margin-bottom: 4px;
+}
+
