@@ -73,7 +73,7 @@
     color: var(--color-bg);
     font-family: var(--font-mono);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     overflow-y: auto;
 
     /*oculto barra de scroll en chrome, safari y opera*/
@@ -82,4 +82,15 @@
     }
     /* oculto barra de scroll en firefox */
     scrollbar-width: none;
+}
+
+.chain-word {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px;
+}
+
+.chain-arrow {
+    font-size: 1rem;
 }
